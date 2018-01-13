@@ -5,7 +5,7 @@ pipeline {
         maven 'localMVN'
     }
 
-stages{
+	stages{
         stage('Build'){
             steps {
                 sh 'mvn clean package'
@@ -19,7 +19,7 @@ stages{
         }
         stage('Deploy to Staging') {
 			steps {
-				build job: maven-project-deploy-test
+				build job: 'maven-project-deploy-test'
 			}
         }
     }
