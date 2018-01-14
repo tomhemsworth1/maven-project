@@ -22,5 +22,22 @@ pipeline {
 				build job: 'maven-project-deploy-test'
 			}
         }
+		stage('Deploy to Production') {
+			steps {
+				timeout(time:5, unit:'DAYS') {
+					input message: 'Approve PRODUCTION Deployment?'
+				}
+				
+				build job: 'maven-project-deploy-prod'
+			}
+			post {
+				success {
+					echo 'Code successfully deployed to production.'
+				}
+				failure {
+					echo 'Code deployment failed!'
+				}
+			}
+        }
     }
 }
