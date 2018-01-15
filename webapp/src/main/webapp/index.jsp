@@ -1,1 +1,1 @@
-Hello, World 14/01/2018!
+Hello, World EC2 TEST!
