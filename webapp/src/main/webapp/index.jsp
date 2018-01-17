@@ -1,1 +1,1 @@
-Hello, World EC2 TEST!
+Hello, World EC2 automated build
